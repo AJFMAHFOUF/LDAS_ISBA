@@ -1,0 +1,48 @@
+ &ASSIM
+   L_OI = .TRUE.
+   L_EC = .FALSE.
+   L_2DVAR = .FALSE.
+   L_EKF = .FALSE.
+   L_ENKF = .FALSE.
+   L_NOISE = .FALSE.
+   L_WG = .TRUE.
+   L_2M = .TRUE.
+ / 
+ &SETENKF
+   NDIM = 100
+   XINFL = 1.015
+ /
+ &SOILINIT
+   SWI1 = 0.0
+   SWI2 = 0.0
+   TG1 = 295.
+   TG2 = 295.
+ /
+ &PERTRAIN
+   SCALE_RAIN = 0.50
+ /
+ &SIZEJAC
+   EPS_W1 = 0.0001
+   EPS_W2 = 0.0001
+   EPS_T1 = 0.001
+   EPS_T2 = 0.001
+ /
+ &OBSERR
+   ER_T2M = 1.0
+   ER_HU2M = 0.1
+   ER_TB = 2.0
+   ER_WG = 0.1
+ /
+ &BKGERR
+   ER_W1 = 0.1
+   ER_W2 = 0.1
+   ER_T1 = 1.0
+   ER_T2 = 1.0
+ / 
+ &MODERR
+   Q_W1 = 0.02
+   Q_W2 = 0.02
+   Q_T1 = 0.5
+   Q_T2 = 0.5
+ /
+
