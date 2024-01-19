@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 JAN 2024 10:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  19 JAN 2024 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -140,34 +140,6 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2022/01/26 3.70 The Babel package
-\babel@savecnt=\count272
-\U@D=\dimen151
-\l@unhyphenated=\language5
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@readstream=\read2
-\bbl@dirlevel=\count273
-
-
-! Package babel Error: Unknown option 'francais'. Either you misspelled it
-(babel)                or the language definition file francais.ldf was not fou
-nd.
-
-See the babel package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4254 \ProcessOptions*
-                       
-? 
-Package babel Info: You haven't specified a language. I'll use 'nil'
-(babel)             as the main language. Reported on input line 4299.
-(/usr/share/texlive/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2022/01/26 3.70 Nil language
-\l@nil=\language6
-))
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
 7.
 
@@ -176,17 +148,10 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count274
+\l__color_backend_stack_int=\count272
 \l__pdf_internal_box=\box53
 )
-(./doc_simple_ldas.aux
-(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/fr/babel-french.tex
-Package babel Info: Importing basic data for french
-(babel)             from babel-fr.ini. Reported on input line 11.
-)
-Package babel Info: Hyphen rules for 'french' set to \l@nil
-(babel)             (\language6). Reported on input line 6.
-)
+(./doc_simple_ldas.aux)
 \openout1 = `doc_simple_ldas.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -206,16 +171,16 @@ LaTeX Font Info:    ... okay on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count275
-\scratchdimen=\dimen152
+\scratchcounter=\count273
+\scratchdimen=\dimen151
 \scratchbox=\box54
-\nofMPsegments=\count276
-\nofMParguments=\count277
+\nofMPsegments=\count274
+\nofMParguments=\count275
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count278
-\MPscratchDim=\dimen153
-\MPnumerator=\count279
-\makeMPintoPDFobject=\count280
+\MPscratchCnt=\count276
+\MPscratchDim=\dimen152
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
 \everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -273,13 +238,7 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 3
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (23.42795pt too wide) in paragraph at lines 72--76
-\OT1/ptm/m/n/12 directory correspond to assimilations of both screen-level obse
-rvations and L-band brightness temperatures
- []
-
-[2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 Underfull \hbox (badness 10000) in paragraph at lines 119--134
 
  []
@@ -369,51 +328,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--290
 
  []
 
-[5] [6]
-Overfull \hbox (1.82935pt too wide) in paragraph at lines 328--330
-[]\OT1/pcr/m/n/12 print[]output[]enkf.f90 \OT1/ptm/m/n/12 : computation of mean
-s and standard deviations from the EnKF outputs
- []
-
-
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 344--346
-[]\OT1/pcr/m/n/12 oi[]coeffs[]ec.f90\OT1/ptm/m/n/12 : computation of the optimu
-m interpolation coefficients to analyse soil variables
- []
-
-
-Overfull \hbox (3.91663pt too wide) in paragraph at lines 346--348
-[]\OT1/pcr/m/n/12 oi[]coeffs[]mf.f90\OT1/ptm/m/n/12 : computation of the optimu
-m interpolation coefficients to analyse soil variables
- []
-
-[7]
+[5] [6] [7]
 Overfull \hbox (9.342pt too wide) in paragraph at lines 368--370
-[]\OT1/pcr/m/n/12 cls[]interpol.f90\OT1/ptm/m/n/12 : vertical interpolation at 
-observation level (2m and 10m) using Monin-Obukhov
+[]\OT1/pcr/m/n/12 cls[]interpol.f90\OT1/ptm/m/n/12 : ver-ti-cal in-ter-po-la-ti
+on at ob-ser-va-tion level (2m and 10m) us-ing Monin-Obukhov
  []
 
-[8]
-Overfull \hbox (5.60399pt too wide) in paragraph at lines 417--426
-\OT1/ptm/m/n/12 In our case, $\OMS/cmsy/m/n/12 H$ \OT1/ptm/m/n/12 will be a ver
-tical interpolation scheme for $\OML/cmm/m/it/12 T[]$ \OT1/ptm/m/n/12 and $\OML
-/cmm/m/it/12 HU[]$ \OT1/ptm/m/n/12 (\OT1/pcr/m/n/12 vdfppcfls.f90\OT1/ptm/m/n/1
-2 ) and microwave
- []
-
-[9]
-Overfull \hbox (8.76254pt too wide) in paragraph at lines 493--498
-\OT1/ptm/m/n/12 approach where a state $\OT1/cmr/bx/n/12 x$ \OT1/ptm/m/n/12 min
-imizes a cost-function measuring the departure between a bacground information
- []
-
-[10] [11] [12]
-Overfull \hbox (0.21628pt too wide) in paragraph at lines 744--747
-[]\OT1/ptm/m/n/12 Bouttier, F., J.-F. Mahfouf, and J. Noilhan, 1993: Sequential
- assimilation of soil moisture from atmospheric
- []
-
-[13] [14] (./doc_simple_ldas.aux) )
+[8] [9] [10] [11] [12] [13] [14] (./doc_simple_ldas.aux) )
 (\end occurred inside a group at level 3)
 
 ### simple group (level 3) entered at line 668 ({)
@@ -421,13 +342,13 @@ Overfull \hbox (0.21628pt too wide) in paragraph at lines 744--747
 ### simple group (level 1) entered at line 656 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 4381 strings out of 480204
- 72541 string characters out of 5895010
- 386490 words of memory out of 5000000
- 22242 multiletter control sequences out of 15000+600000
+ 3324 strings out of 480204
+ 53552 string characters out of 5895010
+ 348837 words of memory out of 5000000
+ 21203 multiletter control sequences out of 15000+600000
  495820 words of font info for 80 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 60i,10n,67p,240b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,10n,67p,240b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
@@ -446,7 +367,7 @@ texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on doc_simple_ldas.pdf (14 pages, 246025 bytes).
+Output written on doc_simple_ldas.pdf (14 pages, 247078 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  88 compressed objects within 1 object stream
