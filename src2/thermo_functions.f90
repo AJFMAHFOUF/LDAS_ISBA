@@ -13,7 +13,7 @@
  REAL :: esat, lnesat
  REAL, INTENT(IN) :: t
  IF (t>=273.15) THEN
-   esat=611.2*exp(17.67*(t-273.15)/(t-27.65)) ! Bolton (1980)
+   esat=611.2*exp(17.67*(t-273.15)/(t-29.65)) ! Bolton (1980)
  ELSE
    lnesat=23.33086-6111.72784/t+0.15215*log(t)
    esat=100.0*exp(lnesat)                     ! Emanuel (1994)
@@ -53,8 +53,8 @@
  REAL :: esat, lnesat, desat
  REAL, INTENT(IN) :: t
  IF (t>=273.15) THEN
-   desat=2651376.432*exp(17.67*(t-273.15)/(t-27.65))/ &
-&        ((t-27.65)*(t-27.65))          
+   desat=2629776.6*exp(17.67*(t-273.15)/(t-29.65))/ &
+&        ((t-29.65)*(t-29.65))          
  ELSE
    lnesat=23.33086-6111.72784/t+0.15215*log(t)
    desat=100.0*exp(lnesat)* &

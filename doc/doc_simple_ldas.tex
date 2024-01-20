@@ -1,8 +1,9 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx,rotate,color,amsmath,ametsoc}
 \usepackage[latin1]{inputenc}
+\usepackage{hyperref}
 %\usepackage[francais]{babel}
-\setlength{\textwidth}{18cm}
+\setlength{\textwidth}{18.2cm}
 \setlength{\textheight}{24cm} % define A4 page
 \hoffset=-2.4cm \voffset=-3.1cm % center output on A4 page
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} 
@@ -17,13 +18,13 @@
 \begin{document}
 \title{Documentation of a Simple Land Data Assimilation System (SLDAS)}
 \author{Jean-Fran\c cois MAHFOUF}
-\date{19 January 2024}
+\date{20 January 2024}
 \maketitle
 \section{Introduction}
 A simple land data assimilation system (SLDAS) has been designed
 to evaluate the behavior of various assimilation techniques at local scale
 using the land surface scheme ISBA described in Noilhan and Mahfouf (1996)
-and simulated observations (so-called "twin experminents"). 
+and simulated observations (so-called "twin experiments"). 
 Such experimental set-up allows to understand rather easily 
 the results obtained since the solution of the inversion problem is known.
 \section{Main features of the system}
@@ -350,7 +351,7 @@ analyse soil variables from $T_{2m}$ and $HU_{2m}$ using the M\'et\'eo-France fo
 \begin{description}
 \item {\tt chlodc.f90} : Cholesky factorization (part I) for inversion of a symmetric matrix
 \item {\tt chlosl.f90} : Cholesky factorization (part II) for inversion of a symmetric matrix
-\item {\tt inverse\_matrix.f90}: produce the inverse matrix that has been implicitely obtained
+\item {\tt inverse\_matrix.f90}: produce the inverse matrix that has been implicitly obtained
 in the Cholesky decomposition.
 \item {\tt gasdev.f90}:  Generation of a random number following a Gaussian distribution of zero mean and 
 variance one.
@@ -584,7 +585,7 @@ operators (Jacobians)
  $\mathbf{H}$, $\mathbf{M}$, $\mathbf{H}^T$, and
 $\mathbf{M}^T$ 
 as well as the specification of the 
-$\mathbf{B}$ matrix. It is rather popular in hydrology (Crow et al., 2001; Reichle et al., 2002).
+$\mathbf{B}$ matrix. It is rather popular in hydrology (Crow and Wood, 2003; Reichle et al., 2002).
 The same equation as for the EKF is solved, but the matrices
   $\mathbf{BH}^T$ and 
 $\mathbf{HBH}^T$  are  obtained from an ensemble of predictions
@@ -609,7 +610,7 @@ with the average operators :
 \mathbf{x}_i
 \mathbf{y}^T_i
 \]
-An advantage of this approach is that there is no need to get explicily
+An advantage of this approach is that there is no need to get explicitly
 the various matrices entering in the computation of the Kalman gain 
 $\mathbf{K}$. 
 The spread of the ensemble is obtained by perturbing randomly the observations
@@ -711,39 +712,43 @@ Reference run & {\tt REF} & F & F & F & F & F \\
 \hline
 Open loop run & {\tt OL} & F & F & F & F & F \\
 \hline
-OI M\'et\'eo-France & {\tt OI\_MF} & T & F & F & F & F \\
+OI M\'et\'eo-France & {\tt OI\_MF} & \bf{T} & F & F & F & F \\
 \hline
-OI ECMWF & {\tt OI\_EC} & T & F & F & F & F \\
+OI ECMWF & {\tt OI\_EC} & \bf{T} & \bf{T} & F & F & F \\
 \hline
-Extended Kalman filter & {\tt EKF}  & F & F & T & F & F \\
+Extended Kalman filter & {\tt EKF}  & F & F & \bf{T} & F & F \\
 \hline
-Simplified 2D-Var & {\tt 2DVAR} & F & F & F & T & F \\
+Simplified 2D-Var & {\tt 2DVAR} & F & F & F & \bf{T} & F \\
 \hline
-Ensemble Kalman filter & {\tt ENKF} & F & F & F & F & T \\
+Ensemble Kalman filter & {\tt ENKF} & F & F & F & F & \bf{T} \\
 \hline
 \end{tabular}
 \caption{Summary of possible experiments}
 \ec
 \end{table}
-\section{Exercises}
+%\section{Exercises}
+\newpage
 \section{References}
 \begin{description}
 \item Balsamo, G., F. Bouyssel, and. J. Noilhan, 2004:
 A simplified bi-dimensional variational analysis of soil moisture from
 screen-level observations in a mesoscale numerical weather prediction model.
 {\it Quart. J. Roy. Meteor. Soc.}, {\bf 130}, 895-915.
+\url{https://doi.org/10.1256/qj.02.215}
+
 
 %\item Balsamo, G., {J.-F. Mahfouf}, { S. B\'elair}, and G. Deblonde, 2006: A global root-zone soil moisture %analysis using simulated L-band brightness temperature in preparation for the HYDROS satellite mission. 
 %{\it J. Hydrometeor.}, {\bf 7}, 1126-1146.
 
 \item Balsamo, G., J.-F. Mahfouf, S. B\'elair, and G. Deblonde, 2007:
 A land data assimilation system for soil moisture and temperature : an
-information content study. {\it J. Hydrometeor.}
-(accept\'e pour publication)
+information content study. {\it J. Hydrometeor.}, {\bf 8}, 1225-1242.
+\url{https://doi.org/10.1175/2007JHM819.1}
 
 \item Bouttier, F., J.-F. Mahfouf, and J. Noilhan, 1993:
 Sequential assimilation of soil moisture from atmospheric low-level parameters. Part I:
 Sensitivity and calibration studies. {\it J. Appl. Meteor.}, {\bf 32}, 1335-1351.
+\url{https://doi.org/10.1175/1520-0450(1993)032%3C1335:SAOSMF%3E2.0.CO;2}
 
 %\item Calvet, J.-C., J. Noilhan, and P. Bessemoulin, 1998 : Retrieving
 %the root-zone soil moisture from surface soil moisture or temperature estimates:
@@ -753,34 +758,50 @@ Sensitivity and calibration studies. {\it J. Appl. Meteor.}, {\bf 32}, 1335-1351
 %\item Calvet, J,-C., and J. Noilhan, 2000: From near-surface to root-zone soil
 %moisture using year-round data. {\it J. Hydrometeor.}, {\bf 1}, 393-411.
 
+\item Crow, W.T. and Wood, E.F., 2003: The assimilation of remotely sensed soil brightness temperature imagery into a land-surface model using ensemble Kalman filtering: a case study based on ESTAR measurements during SGP97. 
+{\it Advances in Water Resources}, {\bf 26}, 137-149. \url{https://doi.org/10.1016/S0309-1708(02)00088-X} 
+
 \item Douville, H., P. Viterbo, J.-F. Mahfouf, and A.C.M. Beljaars, 2000:
 Evaluation of optimal interpolation and nudging techniques for soil moisture
 analysis using FIFE data. {\it Mon. Wea. Rev.}, {\bf 128}, 1733-1756.
+\url{https://doi.org/10.1175/1520-0493(2000)128\%3C1733:EOTOIA%3E2.0.CO;2}
 
 \item Evensen, G., 2003 : The ensemble Kalman Filter: Theoretical formulation
 and practical implementation. {\it Ocean Dyn.}, {\bf 53}, 343-367.
+\url{https://doi.org/10.1007/s10236-003-0036-9}
 
 \item Geleyn, J.-F., 1988: Interpolation of wind, temperature, humidity values
 from model levels to the height of measurement. {\it Tellus}, {\bf 40A}, 347-351.
+\url{https://doi.org/10.3402/tellusa.v40i4.11805}
 
 \item Giard, D., and E. Bazile, 2000: Implementation of a new assimilation scheme
 for soil and surface variables in a global NWP model. {\it Mon. Wea. Rev.},
 {\bf 128}, 997-1015.
+\url{https://doi.org/10.1175/1520-0493(2000)128\%3C0997:IOANAS\%3E2.0.CO;2}
 
 \item Hess, R., 2001: Assimilation of screen-level observations by
   variational soil moisture analysis. {\it Meteor. Atmos. Phy.}, {\bf 77}, 145-154.
+\url{https://doi.org/10.1007/s007030170023}
 
 \item Houtekamer, P. and H.L. Mitchell, 1998: Data assimilation
 using an Ensemble Kalman filter technique.
 {\it Mon. Wea. Rev.}, {\bf 126}, 796-811.
+\url{https://doi.org/10.1175/1520-0493(1998)126\%3C0796:DAUAEK\%3E2.0.CO;2}
+
+\item Lorenc, A.C., 2003: The potential of the ensemble Kalman filter for NWP - a comparison with 4D-Var. {\it Quart.J. Roy. Meteor. Soc.}, {\bf 129}, 3183-3203. \url{https://doi.org/10.1256/qj.02.132}
+
+\item Louis, J.-F., J.-F. Geleyn and M. Tiedtke, 1982: A short history of the PBL parameterization at ECMWF. Proceedings of the Workshop on Planetary Boundary Layer parameterization, 25-27 Nov. 1981, ECMWF, Reading (U.K.), 59-79.
+\url{https://www.ecmwf.int/sites/default/files/elibrary/1982/75473-short-history-pbl-parameterization-ecmwf_0.pdf}
 
 \item Mahfouf, J.-F., 1991: Analysis of soil moisture from
   near-surface parameters: A feasibility study.
 {\it J. Appl. Meteor.}, {\bf 30}, 506-526.
+\url{https://doi.org/10.1175/1520-0450(1991)030\%3C1534:AOSMFN\%3E2.0.CO;2}
 
 \item Mahfouf, J.-F., and J. Noilhan, 1991:
 Comparative study of various formulations of evaporation from bare soil
 using in-situ data. {\it J. Appl. Meteor.}, {\bf 30}, 1354-1365.
+\url{https://doi.org/10.1175/1520-0450(1991)030\%3C1354:CSOVFO\%3E2.0.CO;2}
 
 %\item Mahfouf, J.-F., A.O. Manzi, J. Noilhan, H. Giordani, and M. D\'equ\'e, 1995:
 %The land surface scheme ISBA within the M\'et\'eo-France climate model ARPEGE.
@@ -793,31 +814,39 @@ using in-situ data. {\it J. Appl. Meteor.}, {\bf 30}, 1354-1365.
 
 \item  Mahfouf, 2007: The M\'et\'eo-France soil analysis.
 Part I: Evaluation and perspectives at local scale (in French).
-Note de Centre CNRM/GMME No 84. Available at {\em https://hal.science/hal-04390802}
+Note de Centre CNRM/GMME No 84. 
+\url{https://hal.science/hal-04390802}
 
 \item Mascart, P., J. Noilhan, and H. Giordani, 1995:
 A modified parameterization of the surface layer flux-profile
 relationships using different roughness length values for
 heat and momentum. {\it Bound. Layer. Meteor.}, {\bf 72}, 331-344.
+\url{https://doi.org/10.1007/BF00708998}
 
 \item Mu\~noz-Sabater, J., L. Jarlan, J.-C. Calvet, F. Bouyssel, and P. De Rosnay,
   2007:
 From near-surface to root-zone soil moisture using different
 assimilation techniques. 
 {\it J. Hydrometeor.}, {\bf 8}, 194-206.
+\url{https://doi.org/10.1175/JHM571.1}
 
 \item Noilhan, J. , and J.-F. Mahfouf, 1996: The ISBA land surface parameterization
 scheme. {\it Global Planet. Change}, {\bf 13}, 145-159.
+\url{https://doi.org/10.1016/0921-8181(95)00043-7}
 
 \item Press, W.H., S.A. Teukolsky, W.T. Vetterling, and B.P. Flannery, 1992:
 Numerical recipes in FORTRAN. The art of scientific computing. Cambridge
 University Press, 963 pp.
+\url{http://s3.amazonaws.com/nrbook.com/book_F210.html}
+
+\item Reichle, R. H., J. P. Walker, R. D. Koster, and P. R. Houser, 2002: Extended versus Ensemble Kalman Filtering for Land Data Assimilation. {\it J. Hydrometeor.}, {\bf 3}, 728-740. \url{https://doi.org/10.1175/1525-7541(2002)003<0728:EVEKFF>2.0.CO;2} 
 
 \item Seuffert, G., H. Wilker, P. Viterbo, M. Drusch, and
   {J.-F. Mahfouf}, 2004:
 The usage of screen-level parameters and 
 microwave brightness temperature for soil moisture analysis.
 {\it J. Hydrometeor.}, {\bf 5}, 516-531.
+\url{https://doi.org/10.1175/1525-7541(2004)005\%3C0516:TUOSPA\%3E2.0.CO;2}
 
 \end{description}
 \end{document}
